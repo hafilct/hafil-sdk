@@ -9,7 +9,7 @@ class Checks extends ResourceBase
 {
 
     public function create(array $data){ 
-        $checks = $this->convertRequestFormat('payees',$data);
+        $checks = $this->convertRequestFormat('checks',$data);
         return  $this->sendRequest("POST",'/checks',$checks);
     }
 
