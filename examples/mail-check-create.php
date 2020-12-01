@@ -7,6 +7,9 @@ use OnlineCheckWriter\OnlineCheckWriter;
     $ocw         = new OnlineCheckWriter($token,$environment);
 
 
+    //Retrieve all mail options
+    $mailOptions =  $ocw->mailChecks()->getMailOptions();
+
     //Create payee
     $payeeResponse   = $ocw->payees()->create(array(
         'name'       =>'Alison Gambal mail12',
@@ -79,11 +82,11 @@ use OnlineCheckWriter\OnlineCheckWriter;
         "mailChecks"                  =>array(
                  [
                     "checkId"                     =>$checkid, 
-                    "shippingTypeId"              =>3,
-                    "paperTypeId"                 =>7,
-                    "informTypeId"                =>10,
-                    "enableSmsInform"             =>0,
-                    "enableEmailInform"           =>1,
+                    "shippingTypeId"              =>$mailOptions['shippingTypes'][0]['shippingTypeId'], //First class
+                    "paperTypeId"                 =>$mailOptions['paperTypes'][2]['paperTypeId'],      //Ultra Hollogram Check Paper
+                    "informTypeId"                =>$mailOptions['informTypes'][0]['informTypeId'],    //Notify Receiver by Sms
+                    "enableSmsInform"             =>false,
+                    "enableEmailInform"           =>true,
                     "payeeEmail"                  =>"email@test.com",
                     "payeePhone"                  =>"123456789",
                     "attachmentIds"               =>[$attachmentId]
@@ -134,9 +137,9 @@ use OnlineCheckWriter\OnlineCheckWriter;
         "mailChecks"                  =>array(
                  [
                     "checkId"                     =>$checkid, 
-                    "shippingTypeId"              =>3,
-                    "paperTypeId"                 =>7,
-                    "informTypeId"                =>10,
+                    "shippingTypeId"              =>$mailOptions['shippingTypes'][0]['shippingTypeId'], //First class
+                    "paperTypeId"                 =>$mailOptions['paperTypes'][2]['paperTypeId'],      //Ultra Hollogram Check Paper,
+                    "informTypeId"                =>$mailOptions['informTypes'][0]['informTypeId'],    //Notify Receiver by Sms,
                     "enableSmsInform"             =>0,
                     "enableEmailInform"           =>1,
                     "payeeEmail"                  =>"email@test.com",

@@ -14,8 +14,8 @@ class MailChecks extends ResourceBase
     }
 
     public function getMailOptions(){
-        return  $this->sendRequest("GET",'/mailchecks/mailingOptions');
+        $mailOptions = $this->sendRequest("GET",'/mailchecks/mailingOptions');
+        return $mailOptions['data'];
     }
 
-    
 }
