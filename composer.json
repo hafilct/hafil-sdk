@@ -1,6 +1,6 @@
 {
-    "name": "onlinecheckwriter/ocw-sdk-php",
-    "description": "OnlineCheckWriter API PHP wrapper",
+    "name": "hafilct/php-sdk-test-v3",
+    "description": "Test sdk from hafil",
     "keywords": [
         "online check mailing",
         "sent physical bank check",
