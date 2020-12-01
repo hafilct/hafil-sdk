@@ -20,7 +20,7 @@ class OnlineCheckWriter{
     const SANDBOX_BASE_URL    = 'https://sandbox.onlinecheckwriter.com/api/v3';
     const LIVE_BASE_URL       = 'https://app.onlinecheckwriter.com/api/v3';
     const LOCAL_BASE_URL      = 'http://localhost:8000/api/v3';
-    const DEV_BASE_URL        = 'https://dev.sebipay.com/'; //only for test
+    const DEV_BASE_URL        = 'https://dev.sebipay.com/api/v3'; //only for testing team
 
     
     private $apiToken;
