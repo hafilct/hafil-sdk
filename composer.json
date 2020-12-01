@@ -23,5 +23,5 @@
     "autoload": {
         "psr-4": {"OnlineCheckWriter\\": "src/"}
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev-master"
 }
